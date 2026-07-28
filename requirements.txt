@@ -1,0 +1,9 @@
+pdfplumber==0.7.6
+sentence-transformers==2.2.2
+faiss-cpu==1.7.4
+tqdm==4.65.0
+numpy==1.25.0
+pandas==2.2.2
+python-dateutil==2.8.2
+click==8.1.7
+sqlitedict==2.0.0
