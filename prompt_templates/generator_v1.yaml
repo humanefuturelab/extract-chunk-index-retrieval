@@ -1,0 +1,35 @@
+name: generator_v1
+version: v1
+instruction: |
+  You are asked to produce a structured informational Markdown page from the provided source text.
+  Output MUST be YAML frontmatter followed by the Markdown body. The YAML frontmatter must contain these fields: id, title, sources (list), score (0-100), sub_scores (a mapping of named sub-scores: relevance, factuality, structure, readability, originality).
+  After the frontmatter, produce a Markdown document of about 700-900 words with these headings:
+  1) Summary
+  2) Background
+  3) Key Findings
+  4) Actionable Steps
+  5) Sources
+
+  Use the source text provided below. If the source is an image caption or short text, synthesize additional plausible context but do NOT invent factual claims about named entities—if uncertain, mark as "uncertain" in the Findings.
+
+  Example usage: replace {{source_text}} with the extracted snippet.
+
+examples:
+  - input: "A brief note about decentralized crawling uses multiple workers to retrieve pages..."
+    output: |
+      ---
+      id: page-example-1
+      title: "Decentralized crawling for research"
+      sources: [src-1]
+      score: 85
+      sub_scores:
+        relevance: 28
+        factuality: 22
+        structure: 20
+        readability: 10
+        originality: 5
+      ---
+      # Decentralized crawling for research
+      ## Summary
+      ...
+

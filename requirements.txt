@@ -7,3 +7,5 @@ pandas==2.2.2
 python-dateutil==2.8.2
 click==8.1.7
 sqlitedict==2.0.0
+requests==2.31.0
+PyYAML==6.0

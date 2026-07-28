@@ -1,0 +1,17 @@
+name: scorer_v1
+version: v1
+instruction: |
+  You will receive the full generated page (YAML frontmatter + Markdown). Return a JSON object containing numeric sub_scores and an optional normalized score.
+  Required output format: a single JSON object, for example:
+  { "sub_scores": { "relevance": 30, "factuality": 25, "structure": 20, "readability": 15, "originality": 10 }, "score": 100 }
+
+  Evaluate the document against the following criteria:
+  - Relevance: how focused the content is to the source.
+  - Factuality: how well claims are supported by source text or conservative reasoning.
+  - Structure: presence of required sections and clarity.
+  - Readability: clarity and flow.
+  - Originality: non-trivial insights or synthesis beyond the raw source.
+
+examples:
+  - input: "---\nid: page-example-1\n...\n---\n# Title\n..."
+    output: '{ "sub_scores": {"relevance": 28, "factuality": 22, "structure": 20, "readability": 10, "originality": 5 }, "score": 85 }'
